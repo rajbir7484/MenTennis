@@ -1,0 +1,32 @@
+﻿@page
+@model MenTennis.Pages.Countries.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="text-center myheading">Add New Country</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Country.CountryName" class="control-label"></label>
+                <input asp-for="Country.CountryName" class="form-control" />
+                <span asp-validation-for="Country.CountryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">View All Countries</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

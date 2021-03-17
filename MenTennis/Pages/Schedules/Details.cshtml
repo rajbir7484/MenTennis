@@ -1,0 +1,48 @@
+﻿@page
+@model MenTennis.Pages.Schedules.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center myheading">Tournament Schedule Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule.Tournament)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.Tournament)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule.Dates)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.Dates)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule.Host)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.Host)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule.DefendingChampion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.DefendingChampion)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Schedule.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Schedule.Country.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-success" asp-route-id="@Model.Schedule.Id">Edit</a> |
+    <a asp-page="./Index">View Tournament Schedule</a>
+</div>

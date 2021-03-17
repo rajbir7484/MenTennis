@@ -1,0 +1,60 @@
+﻿@page
+@model MenTennis.Pages.Schedules.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 class="text-center myheading">View Tournament Schedule</h1>
+
+<p>
+    <a asp-page="Create" class="btn btn-primary">Add New Tournament Schedule</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule[0].Tournament)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule[0].Dates)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule[0].Host)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule[0].DefendingChampion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule[0].Country)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Schedule) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tournament)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dates)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Host)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DefendingChampion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country.CountryName)
+            </td>
+            <td>
+                <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" class="btn btn-success" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" class="btn btn-warning" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

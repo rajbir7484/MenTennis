@@ -1,0 +1,46 @@
+﻿@page
+@model MenTennis.Pages.GrandWinners.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>GrandWinner</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.Tournament)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.Tournament)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.WinnerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.WinnerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.RunnerUp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.RunnerUp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.Year)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="GrandWinner.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="Index">View All Grand Slam Winners</a>
+    </form>
+</div>

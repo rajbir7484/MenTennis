@@ -1,0 +1,35 @@
+﻿@page
+@model MenTennis.Pages.MensRankings.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="text-center myheading">Mens Ranking Details</h1>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MensRanking.PlayerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MensRanking.PlayerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MensRanking.Points)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MensRanking.Points)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.MensRanking.Country)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MensRanking.Country.Id)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-secondary" asp-route-id="@Model.MensRanking.Id">Edit</a> |
+    <a asp-page="./Index">View Mens Ranking</a>
+</div>

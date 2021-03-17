@@ -1,0 +1,48 @@
+﻿@page
+@model MenTennis.Pages.GrandWinners.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="text-center myheading">Edit Grand Slam Winner Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="GrandWinner.Id" />
+            <div class="form-group">
+                <label asp-for="GrandWinner.Tournament" class="control-label"></label>
+                <input asp-for="GrandWinner.Tournament" class="form-control" />
+                <span asp-validation-for="GrandWinner.Tournament" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrandWinner.WinnerName" class="control-label"></label>
+                <input asp-for="GrandWinner.WinnerName" class="form-control" />
+                <span asp-validation-for="GrandWinner.WinnerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrandWinner.RunnerUp" class="control-label"></label>
+                <input asp-for="GrandWinner.RunnerUp" class="form-control" />
+                <span asp-validation-for="GrandWinner.RunnerUp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GrandWinner.Year" class="control-label"></label>
+                <input asp-for="GrandWinner.Year" class="form-control" />
+                <span asp-validation-for="GrandWinner.Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">View All Grand Slam Winners</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

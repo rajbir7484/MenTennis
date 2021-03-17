@@ -1,0 +1,43 @@
+﻿@page
+@model MenTennis.Pages.MensRankings.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>MensRanking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MensRanking.PlayerName" class="control-label"></label>
+                <input asp-for="MensRanking.PlayerName" class="form-control" />
+                <span asp-validation-for="MensRanking.PlayerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MensRanking.Points" class="control-label"></label>
+                <input asp-for="MensRanking.Points" class="form-control" />
+                <span asp-validation-for="MensRanking.Points" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MensRanking.CountryId" class="control-label"></label>
+                <select asp-for="MensRanking.CountryId" class ="form-control" asp-items="ViewBag.CountryId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save Details" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">View Mens Ranking</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

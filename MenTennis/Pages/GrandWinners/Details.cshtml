@@ -1,0 +1,43 @@
+﻿@page
+@model MenTennis.Pages.GrandWinners.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>GrandWinner</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.Tournament)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.Tournament)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.WinnerName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.WinnerName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.RunnerUp)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.RunnerUp)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.GrandWinner.Year)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.GrandWinner.Year)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" class="btn btn-success" asp-route-id="@Model.GrandWinner.Id">Edit</a> |
+    <a asp-page="Index">View All Grand Slam Winners</a>
+</div>
